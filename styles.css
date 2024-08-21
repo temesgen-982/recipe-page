@@ -1,0 +1,187 @@
+@font-face {
+    font-family: "outfit";
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+
+}
+
+@font-face {
+    font-family: "youngserif";
+    src: url('assets/fonts/young-serif/YoungSerif-Regular.ttf');
+
+}
+
+:root{
+    --white: hsl(0, 0%, 100%);
+
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+
+    --brown-800: hsl(14, 45%, 36%);
+
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+
+    --fs-paragraph: 16px;
+
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "outfit", sans-serif;
+    background-color: var(--rose-50);
+}
+
+main{
+    width: 100%;
+    background: var(--white);
+}
+
+@media(min-width: 600px){
+    body{
+        display: grid;
+        grid-template-rows: 1fr auto;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+    }
+    main{
+        justify-self: center;
+        max-width: 735px;
+        border-radius: .5em;
+        margin: 1em;
+        display: grid;
+    }
+    .image-container{
+        border-radius: .5em;
+        margin: 2em;
+        overflow: hidden;
+    }
+    main img{
+        object-fit: contain;
+        height: 100%;
+        max-width: 100%;
+    }
+}
+
+/* declaring a global style 
+for all the lists */
+ul, ol{
+    padding: .5em 1.5em;
+    display: grid;
+    gap: .5em;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ol li::marker{
+    color: var(--brown-800);
+}
+
+ul li::before {
+    content: "•";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-weight: var(--fw-700);
+    font-size: var(--fs-paragraph);
+}
+
+/* font style for the titles */
+header h1, section h2{
+    font-family: "youngserif";
+    font-weight: var(--fw-600);
+    color: var(--brown-800);
+    letter-spacing: .025em;
+    margin-bottom: .5em;
+}
+
+main img{
+    max-width: 100%;
+    object-fit: contain;
+}
+
+main > header, main > section{
+    margin: 2em;
+}
+
+section li{
+    font-size: var(--fs-paragraph);
+    color: var(--stone-600);
+    font-weight: var(--fw-400);
+}
+
+/* specifiying a line height */
+p{
+    line-height: 1.3em;
+}
+
+section p strong{
+    font-style: normal;
+    font-weight: var(--fw-700);
+    color: var(--stone-900);
+}
+
+header > h1{
+    font-weight: var(--fw-400);
+    color: var(--stone-900);
+}
+
+.preparation{
+    background-color: var(--rose-50);
+    padding: 1.5em;
+}
+
+.preparation > h2{
+    color: var(--rose-800);
+    font-family: "outfit", sans-serif;
+    font-weight: var(--fw-700);
+}
+
+/* Changing the bullet color to rose */
+.preparation > ul li::before{
+    color: var(--rose-800);
+}
+
+/* Changing the bullet color to brown */
+.ingredients > ul li::before {
+    color: var(--brown-800);
+}
+
+.instructions p{
+    margin-left: 1em;
+}
+
+.nutrition > table{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em auto;
+}
+
+.nutrition > table td{
+    color: var(--stone-600);
+    font-weight: var(--fw-600);
+    padding: .5em 1.5em;
+    text-align: left;
+    border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition > table td:nth-child(2){
+    color: var(--brown-800);
+}
+
+/* <!-- Feel free to remove these styles or customise in your own stylesheet 👍 --> */
+
+.attribution { font-size: 11px; text-align: center; margin-bottom: 1em; padding: 0; }
+.attribution a { color: hsl(228, 45%, 44%); }
